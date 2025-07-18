@@ -1,0 +1,35 @@
+{
+  "name": "prettier-linter-starter-pack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": {
+    "name": "andron13",
+    "email": "andron13@gmail.com",
+    "url": "https://github.com/andron13"
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:andron13/prettier-linter-starter-pack.git"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx,.mjs --fix",
+    "format:fix": "prettier --write \"./**/*.{ts,tsx,js,html,css,mjs,json,md}\"",
+    "lint": "eslint .",
+    "ci:format": "prettier --check .",
+    "ncu:ux": "ncu -u"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "eslint": "^9.31.0",
+    "eslint-plugin-prettier": "^5.5.1",
+    "husky": "^9.1.7",
+    "npm-check-updates": "^18",
+    "prettier": "3.6.2"
+  }
+}

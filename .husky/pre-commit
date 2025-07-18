@@ -1,0 +1,33 @@
+#!/bin/sh
+# Color codes for terminal output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+BOLD='\033[1m'
+RESET='\033[0m'
+
+# Start of the pre-commit hook
+echo "${CYAN}${BOLD}🔧 Husky pre-commit hook is running...${RESET}"
+
+# Get staged files
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g')
+
+# Run prettier only if there are staged files
+if [ -n "$STAGED_FILES" ]; then
+    echo "${CYAN}Formatting staged files...${RESET}"
+    prettier $STAGED_FILES --write --ignore-unknown
+
+    # Check if prettier succeeded
+    if [ $? -ne 0 ]; then
+        echo "${RED}${BOLD}❌ Prettier failed!${RESET}"
+        exit 1
+    fi
+
+    # Re-stage formatted files
+    git add $STAGED_FILES
+else
+    echo "${CYAN}No staged files to format${RESET}"
+fi
+
+# End of the pre-commit hook
+echo "${GREEN}${BOLD}✅  Husky pre-commit hook completed successfully!${RESET}"
