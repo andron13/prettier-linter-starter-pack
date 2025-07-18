@@ -13,10 +13,14 @@
     "type": "git",
     "url": "git+git@github.com:andron13/prettier-linter-starter-pack.git"
   },
+  "type": "module",
   "engines": {
     "node": ">=22.0.0"
   },
   "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx,.mjs --fix",
     "format:fix": "prettier --write \"./**/*.{ts,tsx,js,html,css,mjs,json,md}\"",
@@ -24,12 +28,47 @@
     "ci:format": "prettier --check .",
     "ncu:ux": "ncu -u"
   },
+  "dependencies": {
+    "modern-normalize": "^3.0.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/eslintrc": "^3",
     "@eslint/js": "^9.31.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "@types/node": "^24",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@typescript-eslint/eslint-plugin": "^8.37.0",
+    "@typescript-eslint/parser": "^8.37.0",
+    "@vitejs/plugin-react": "^4.7.0",
     "eslint": "^9.31.0",
+    "eslint-config-prettier": "^10",
+    "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-no-relative-import-paths": "^1.6.1",
+    "eslint-plugin-react-compiler": "^19.1.0-rc.2",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "eslint-plugin-unicorn": "^59.0.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "globals": "^16.3.0",
     "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
     "npm-check-updates": "^18",
-    "prettier": "3.6.2"
+    "prettier": "^3",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.37.0",
+    "vite": "^7.0.5",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }

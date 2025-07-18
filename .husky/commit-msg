@@ -1,0 +1,1 @@
+bash ./husky_scripts/validate-commit.sh "$1"
