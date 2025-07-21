@@ -3,6 +3,7 @@
 // ========================================
 // SORTING AND ORGANIZATION RULES
 // ========================================
+
 const sortingRules = {
   // Import sorting
   "import/order": [
